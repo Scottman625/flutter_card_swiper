@@ -8,6 +8,7 @@ class CardSwiperController extends ChangeNotifier {
   late AnimationController _matchController;
   late Animation<double> _matchAnimation;
   Function? matchAnimationListener;
+  bool isMatched = false;
 
   CardSwiperController(TickerProvider vsync) {
     // ... 你的其他初始化
@@ -31,7 +32,7 @@ class CardSwiperController extends ChangeNotifier {
 
   void startMatchAnimation() {
     _matchController.forward();
-    print('testanimation');
+    isMatched = true;
   }
 
   /// Swipe the card by changing the status of the controller
