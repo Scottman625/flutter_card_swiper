@@ -31,6 +31,7 @@ class CardSwiperController extends ChangeNotifier {
 
   void startMatchAnimation() {
     _matchController.forward();
+    print('testanimation');
   }
 
   /// Swipe the card by changing the status of the controller
