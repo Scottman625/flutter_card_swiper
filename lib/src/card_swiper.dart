@@ -24,7 +24,7 @@ class CardSwiper extends StatefulWidget {
   /// The [cardsCount] parameter specifies the number of cards that will be displayed in the stack.
   ///
   /// This parameter is required and must be greater than 0.
-  final int cardsCount;
+  int cardsCount;
 
   /// The index of the card to display initially.
   ///
@@ -126,7 +126,7 @@ class CardSwiper extends StatefulWidget {
   /// Must be a positive value. Defaults to Offset(0, 40).
   final Offset backCardOffset;
 
-  const CardSwiper({
+  CardSwiper({
     Key? key,
     required this.cardBuilder,
     required this.cardsCount,
@@ -496,5 +496,9 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
       return null;
     }
     return index % widget.cardsCount;
+  }
+
+  void updateCardsCount(int newCount) {
+    widget.cardsCount = newCount;
   }
 }
