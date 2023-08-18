@@ -26,6 +26,8 @@ class CardSwiper extends StatefulWidget {
   /// This parameter is required and must be greater than 0.
   int cardsCount;
 
+  final VoidCallback updateCardCountCallback;
+
   /// The index of the card to display initially.
   ///
   /// Defaults to 0, meaning the first card in the stack is displayed initially.
@@ -130,6 +132,7 @@ class CardSwiper extends StatefulWidget {
     Key? key,
     required this.cardBuilder,
     required this.cardsCount,
+    required this.updateCardCountCallback,
     this.controller,
     this.initialIndex = 0,
     this.padding = const EdgeInsets.symmetric(horizontal: 20, vertical: 25),
