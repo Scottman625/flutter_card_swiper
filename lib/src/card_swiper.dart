@@ -177,17 +177,8 @@ class CardSwiper extends StatefulWidget {
         ),
         super(key: key);
 
-  void updateCardsCount(int count) {
-    _state!.updateCardsCount(count);
-  }
-
-  _CardSwiperState? _state;
-
   @override
-  _CardSwiperState createState() {
-    _state = _CardSwiperState();
-    return _state!;
-  }
+  State createState() => _CardSwiperState();
 }
 
 class _CardSwiperState<T extends Widget> extends State<CardSwiper>
@@ -508,11 +499,5 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
       return null;
     }
     return index % widget.cardsCount;
-  }
-
-  void updateCardsCount(int newCount) {
-    setState(() {
-      widget.cardsCount = newCount;
-    });
   }
 }
