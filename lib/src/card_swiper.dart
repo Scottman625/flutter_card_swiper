@@ -182,6 +182,7 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
     with SingleTickerProviderStateMixin {
   late CardAnimation _cardAnimation;
   late AnimationController _animationController;
+  late int _cardsCount;
 
   SwipeType _swipeType = SwipeType.none;
   CardSwiperDirection _detectedDirection = CardSwiperDirection.none;
@@ -201,7 +202,7 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
   @override
   void initState() {
     super.initState();
-
+    _cardsCount = widget.cardsCount;
     _undoableIndex.state = widget.initialIndex;
 
     widget.controller?.addListener(_controllerListener);
@@ -499,6 +500,8 @@ class _CardSwiperState<T extends Widget> extends State<CardSwiper>
   }
 
   void updateCardsCount(int newCount) {
-    widget.cardsCount = newCount;
+    setState(() {
+      _cardsCount = newCount;
+    });
   }
 }
