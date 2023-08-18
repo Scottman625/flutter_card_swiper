@@ -169,7 +169,7 @@ class CardSwiper extends StatefulWidget {
         ),
         assert(
           numberOfCardsDisplayed >= 1 && numberOfCardsDisplayed <= cardsCount,
-          'you must display at least one card, and no more than [cardsCount]',
+          'you must display at least one card, and no more than [cardsCount]:${cardsCount} numberOfCardsDisplayed:${numberOfCardsDisplayed}',
         ),
         assert(
           initialIndex >= 0 && initialIndex < cardsCount,
